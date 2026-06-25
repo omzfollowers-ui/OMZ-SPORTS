@@ -12,7 +12,18 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://omzsports.com" />
 
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#e8460a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="OMZ Sports" />
+    <meta name="application-name" content="OMZ Sports" />
+    <meta name="msapplication-TileColor" content="#e8460a" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://omzsports.com" />
     <meta property="og:title" content="OMZ Sports — Every Sport. Every Day." />
@@ -28,7 +39,7 @@
     <meta name="twitter:description" content="Latest football, basketball and tennis news, transfers, scores and highlights from around the world." />
     <meta name="twitter:image" content="https://omzsports.com/og-image.jpg" />
 
-    <!-- Structured Data (JSON-LD) for Google -->
+    <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,19 +48,16 @@
       "url": "https://omzsports.com",
       "logo": "https://omzsports.com/logo.png",
       "description": "OMZ Sports delivers the latest football, basketball and tennis news, transfers, scores and highlights from around the world.",
-      "sameAs": ["https://omzsports.com"],
       "foundingDate": "2026",
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "contact@omzsports.com",
         "contactType": "Customer Support"
-      },
-      "publishingPrinciples": "https://omzsports.com",
-      "coverageStartDate": "2026"
+      }
     }
     </script>
 
-    <!-- Preconnect for performance -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -66,7 +74,7 @@
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body class="min-h-screen">
-    <!-- SEO fallback content for crawlers -->
+    <!-- SEO fallback for crawlers -->
     <noscript>
       <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
         <h1>OMZ Sports — Every Sport. Every Day.</h1>
@@ -81,5 +89,16 @@
       </div>
     </noscript>
     <div id="root"></div>
+
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(reg) { console.log('OMZ Sports SW registered', reg.scope); })
+            .catch(function(err) { console.log('SW error', err); });
+        });
+      }
+    </script>
   </body>
 </html>
