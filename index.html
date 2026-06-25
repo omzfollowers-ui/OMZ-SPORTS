@@ -3,12 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
     <title>OMZ Sports — Every Sport. Every Day.</title>
-    <meta name="description" content="Latest sports news, transfers, scores and highlights from around the world — football, basketball and tennis, every day." />
+    <meta name="description" content="OMZ Sports delivers the latest football, basketball and tennis news, transfers, scores and highlights from around the world. Your daily sports hub." />
+    <meta name="keywords" content="sports news, football news, basketball news, tennis news, transfers, scores, highlights, Premier League, NBA, Wimbledon, OMZ Sports" />
+    <meta name="author" content="OMZ Sports" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://omzsports.com" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://omzsports.com" />
+    <meta property="og:title" content="OMZ Sports — Every Sport. Every Day." />
+    <meta property="og:description" content="Latest football, basketball and tennis news, transfers, scores and highlights from around the world." />
+    <meta property="og:image" content="https://omzsports.com/og-image.jpg" />
+    <meta property="og:site_name" content="OMZ Sports" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://omzsports.com" />
+    <meta name="twitter:title" content="OMZ Sports — Every Sport. Every Day." />
+    <meta name="twitter:description" content="Latest football, basketball and tennis news, transfers, scores and highlights from around the world." />
+    <meta name="twitter:image" content="https://omzsports.com/og-image.jpg" />
+
+    <!-- Structured Data (JSON-LD) for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "OMZ Sports",
+      "url": "https://omzsports.com",
+      "logo": "https://omzsports.com/logo.png",
+      "description": "OMZ Sports delivers the latest football, basketball and tennis news, transfers, scores and highlights from around the world.",
+      "sameAs": ["https://omzsports.com"],
+      "foundingDate": "2026",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@omzsports.com",
+        "contactType": "Customer Support"
+      },
+      "publishingPrinciples": "https://omzsports.com",
+      "coverageStartDate": "2026"
+    }
+    </script>
+
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NMT5FEZ5W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,9 +62,24 @@
       gtag('js', new Date());
       gtag('config', 'G-6NMT5FEZ5W');
     </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body class="min-h-screen">
+    <!-- SEO fallback content for crawlers -->
+    <noscript>
+      <div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1>OMZ Sports — Every Sport. Every Day.</h1>
+        <p>Latest football, basketball and tennis news, transfers, scores and highlights from around the world.</p>
+        <h2>Football News</h2>
+        <p>Catch up with the biggest football stories, league updates, match reactions and transfer news.</p>
+        <h2>Basketball News</h2>
+        <p>Follow NBA and basketball news, player performances and major game moments.</p>
+        <h2>Tennis News</h2>
+        <p>Stay updated with tournament results, rankings, and player news from Wimbledon, US Open and beyond.</p>
+        <p>Contact: <a href="mailto:contact@omzsports.com">contact@omzsports.com</a></p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
